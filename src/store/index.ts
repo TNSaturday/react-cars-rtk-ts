@@ -15,3 +15,6 @@ const store = configureStore({
 });
 
 export { store, changeCost, changeName, addCar, changeSearchTerm, removeCar };
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
