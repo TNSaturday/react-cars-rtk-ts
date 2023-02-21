@@ -4,8 +4,12 @@ import { removeCar } from "../store";
 function CarList() {
   const dispatch = useAppDispatch();
   const handleDeleteCar = (id: string) => dispatch(removeCar(id));
+  const cars = useAppSelector(({ cars: { cars, searchTerm } }) =>
+    cars.filter((car) =>
+      car.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
 
-  const { cars } = useAppSelector((state) => state.cars);
   const renderedCars = cars.map((car) => (
     <div key={car.id} className="panel">
       <p>

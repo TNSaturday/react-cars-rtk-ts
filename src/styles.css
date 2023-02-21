@@ -27,6 +27,10 @@
   margin-bottom: 0.75rem;
 }
 
+.car-list {
+  margin-top: 15px;
+}
+
 .car-list .panel.bold {
   font-weight: 600;
 }
